@@ -6,12 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons'
 
 const LikeSection = props => {
-  const [likes, setLikes] = useState(props.likes);
-  
-  const handleClick = (e) => {
-    setLikes(likes + 1)
-  }
-  
+
 
   return (
     <div>
@@ -19,11 +14,13 @@ const LikeSection = props => {
         className="like-section"
         key="likes-icons-container"
       >
-        <div className="like-section-wrapper">
+        <div className="like-section-wrapper"
+          onClick={props.increaseLikes}>
+
           <FontAwesomeIcon 
           icon={faHeart} 
-          onClick={handleClick}
           />
+          
         </div>
         <div className="like-section-wrapper">
           <FontAwesomeIcon icon={faComment} />
